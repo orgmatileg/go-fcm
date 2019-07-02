@@ -49,7 +49,7 @@ func initFirebaseCloudMessaging() (*firebase.App, error) {
 // return
 func SendMessageOne(msg *Message) (string, error) {
 	if msg.Token == "" {
-		return "", errors.New("token cannot be empty")c
+		return "", errors.New("token cannot be empty")
 	}
 	app, err := initFirebaseCloudMessaging()
 	if err != nil {
@@ -142,3 +142,6 @@ func copyMyMessageToFcmMessage(msg *Message) *message.Message {
 		},
 	}
 }
+
+// TODO: add register topic
+// TODO: add unregister topic
