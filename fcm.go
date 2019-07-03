@@ -115,7 +115,7 @@ func copyMyMessageToFcmMessage(msg *Message) *message.Message {
 				Icon:        msg.BadgeIconImage,
 				Tag:         msg.TagsCategory,
 				Body:        msg.Body,
-				ClickAction: msg.ActioniOS,
+				ClickAction: msg.ActionAndroid,
 			},
 			Priority: "high",
 		},
