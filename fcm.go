@@ -25,7 +25,7 @@ type Message struct {
 	ActionAndroid string
 
 	// Webpush
-	LinkAction     string
+	ActionWebPush  string
 	CustomData     map[string]interface{}
 	BadgeIconImage string
 	SoundWebPush   string
@@ -133,7 +133,7 @@ func copyMyMessageToFcmMessage(msg *Message) *message.Message {
 				Tag:        msg.TagsCategory,
 			},
 			FcmOptions: &message.WebpushFcmOptions{
-				Link: msg.LinkAction,
+				Link: msg.ActionWebPush,
 			},
 		},
 		Notification: &message.Notification{
@@ -145,3 +145,15 @@ func copyMyMessageToFcmMessage(msg *Message) *message.Message {
 
 // TODO: add register topic
 // TODO: add unregister topic
+
+/*	USEFUL SOURCE
+
+	https://developers.google.com/web/fundamentals/push-notifications/display-a-notification
+	https://developer.mozilla.org/en-US/docs/Web/API/notification/Notification
+	https://godoc.org/firebase.google.com/go/messaging
+	https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages
+	https://firebase.google.com/docs/cloud-messaging/send-message
+	https://firebase.google.com/docs/admin/setup/
+
+
+*/
